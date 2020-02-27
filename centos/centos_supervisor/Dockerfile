@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:7
 MAINTAINER 1770472946@163.com
 ADD get-pip.py /root/get-pip.py
 RUN yum -y install python3 \
