@@ -8,7 +8,7 @@ RUN yum -y install python3 \
 	&& pip install supervisor \
 	&& echo_supervisord_conf > /etc/supervisord.conf \
 	&& mkdir /etc/supervisord.d \
-	&& sed -i "s/nodaemon=false/nodaemon=true/g" /etc/supervisord.conf \
+	&& sed -i "s/.*nodaemon.*/nodaemon=true/g" /etc/supervisord.conf \
 	&& echo "[include]" >> /etc/supervisord.conf \
 	&& echo "files = supervisord.d/*.ini" >> /etc/supervisord.conf 
 
