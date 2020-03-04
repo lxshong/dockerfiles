@@ -1,4 +1,4 @@
-FROM 17710472946/centos_nginx:v5
+FROM 17710472946/centos_nginx:v7
 MAINTAINER 17710472946@163.com
 ENV RESOURCES=/usr/local/src \
 	PHP_PATH=/usr/local/php \
@@ -52,6 +52,8 @@ RUN \
 	&& make install \
 	# 配置
 	&& cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf \
+	&& cp ${RESOURCES}/php-${PHP_VERSION}/php.ini-production /usr/local/php/lib/php.ini \
+	&& echo "export PATH=${PHP_PATH}/sbin:${PHP_PATH}/bin:$PATH" >> /etc/profile \
 	&& sed -i 's/.*daemonize.*/daemonize = no/g' /usr/local/php/etc/php-fpm.conf \
 	&& cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf \
 	&& rm -rf /usr/local/src/*
