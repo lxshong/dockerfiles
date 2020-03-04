@@ -48,6 +48,9 @@ RUN \
 		--with-gd \
 		--with-fpm-group=www \
 		--with-fpm-user=www \
+		--enable-bcmath \
+		--enable-zip \
+		--enable-sockets \
 	&& make \
 	&& make install \
 	# 配置
