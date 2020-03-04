@@ -1,4 +1,4 @@
-FROM 17710472946/centos_supervisor:v6
+FROM 17710472946/centos_supervisor:v7
 MAINTAINER 17710472946@163.com
 ENV RESOURCES=/usr/local/src \
 	NGINX_PATH=/usr/local/nginx \

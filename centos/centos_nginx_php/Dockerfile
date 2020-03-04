@@ -17,7 +17,6 @@ RUN \
 	# 安装基础功能
 	&& yum -y install libxml2-devel \
 					libjpeg-devel \
-					# libcurl-devel \
 					libpng-devel \
 					freetype-devel \
 					autoconf \
@@ -36,7 +35,7 @@ RUN \
 	&& ./configure --prefix=${PHP_PATH} --enable-fpm \
 		--enable-pcntl \
 		--with-pdo-mysql=mysqlnd \
-		--with-openssl-dir=${OPENSSL_PATH} \
+		--with-openssl=${OPENSSL_PATH} \
 		--with-mcrypt=${MCRYPT_PATH} \
 		--with-curl=${CURL_PATH} \
 		--with-zlib \
