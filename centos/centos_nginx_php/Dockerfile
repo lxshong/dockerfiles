@@ -1,4 +1,4 @@
-FROM 17710472946/centos_nginx:v7
+FROM 17710472946/centos_nginx:v8
 MAINTAINER 17710472946@163.com
 ENV RESOURCES=/usr/local/src \
 	PHP_PATH=/usr/local/php \
