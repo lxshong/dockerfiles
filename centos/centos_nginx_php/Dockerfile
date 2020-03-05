@@ -1,4 +1,4 @@
-FROM 17710472946/centos_nginx:v8
+FROM 17710472946/centos_nginx:v7
 MAINTAINER 17710472946@163.com
 ENV PHP_PATH=/usr/local/php
 ADD php ${PHP_PATH}
