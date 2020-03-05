@@ -38,7 +38,7 @@ RUN \
 	&& rm -rf /usr/local/src/* \
 	&& cp -R ${NGINX_PATH}/html ${WEB_PATH} \
 	&& chown -R www:www ${WEB_PATH}/html \
-	&& echo "export PATH=${NGINX_PATH}/sbin:$PATH" >> /etc/profile \
+	&& echo "export PATH=${NGINX_PATH}/sbin:$PATH" >> /etc/profile
 ADD nginx.conf /usr/local/nginx/conf/nginx.conf
 ADD nginx.ini /etc/supervisord.d/nginx.ini
 EXPOSE 80
